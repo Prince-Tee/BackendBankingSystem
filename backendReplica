@@ -1,0 +1,28 @@
+class BankSystem():
+   def __init__(self, balance):
+      self.balance= balance
+      print('your balance is {}'.format(self.balance))
+    
+   def dep(self):
+        confirmDep = input('Do  you want to deposit? Y/N \n')
+        if (confirmDep == 'Y'):
+            depositamount= eval(input('place your deposit: \n'))
+            self.balance += depositamount
+            print('New Balance is {}'.format(self.balance))
+        else:
+             withdraw = input('Do you want to withdraw? Y/N \n')
+             if (withdraw == 'Y'):
+                 withdrawamount= eval(input('place your withdrawal:\n'))
+                 if (withdrawamount > self.balance):
+                      print('your balance is {} \n you can request for an overdraft via any of our branches'.format(self.balance))
+                 else:
+                      self.balance -= withdrawamount
+                      print('Withdrawal successul \n New Balance is {}'.format(self.balance))
+                                      
+             
+             
+            
+        
+      
+bal= BankSystem(10000)
+bal.dep()
